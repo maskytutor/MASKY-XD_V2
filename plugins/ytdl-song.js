@@ -51,7 +51,7 @@ malvin({
 ┊1 *Aᴜᴅɪᴏ Tʏᴘᴇ* 🎵
 ┊2 *Dᴏᴄᴜᴍᴇɴᴛ Tʏᴘᴇ* 📁 
 ╰╼
-> ${config.FOOTER || "Powered By Masky Official Tech
+> ${config.FOOTER || "Powered By Masky Official Tech"}`;
         const sentMsg = await conn.sendMessage(from, { image: { url: image }, caption: info }, { quoted: mek });
         const messageID = sentMsg.key.id;
         await conn.sendMessage(from, { react: { text: '🎶', key: sentMsg.key } });
