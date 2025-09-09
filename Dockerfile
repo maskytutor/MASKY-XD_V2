@@ -11,11 +11,12 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /usr/src/app
 
-#RUN npm install
-RUN npm install -g qrcode-terminal pm2
+# Copy package.json and package-lock.json first (cache optimization)
+COPY package*.json ./
 
-EXPOSE 3000
-CMD ["node"
+# Install dependencies
+RUN npm install
+RUN npm install -g qrcode-terminal pm2
 
 # Copy app source code
 COPY . .
