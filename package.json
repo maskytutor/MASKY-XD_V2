@@ -9,7 +9,7 @@
     "restart": "pm2 restart MASKY-XD"
   },
   "dependencies": {
-      "@whiskeysockets/baileys": "6.5.0",
+  "@whiskeysockets/baileys": "6.7.9",
     "axios": "^1.7.9",
     "@adiwajshing/keyed-db": "latest",
     "@dark-yasiya/yt-dl.js": "1.0.5",
@@ -37,7 +37,7 @@
     "fs-extra": "^11.1.0",
     "google-tts-api": "^2.0.2",
     "javascript-obfuscator": "^4.0.0",
-    "jimp": "^0.16.1",
+      "jimp": "^1.6.0",
     "megajs": "^1.1.0",
     "mongoose": "^8.0.0",
     "node-cache": "^5.1.1",
