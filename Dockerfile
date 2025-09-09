@@ -1,28 +1,22 @@
-# Use Node.js 20 with Debian Bullseye
 FROM node:20-bullseye
 
-# Install system dependencies for media handling
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     ffmpeg \
     imagemagick \
     webp \
  && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
 WORKDIR /usr/src/app
 
-# Copy package.json and package-lock.json first (cache optimization)
+# Copy dependency files first
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
-RUN npm install -g qrcode-terminal pm2
+# Install dependencies (no global installs needed!)
+RUN npm install --production
 
-# Copy app source code
+# Copy the rest of the app
 COPY . .
 
-# Expose port for Express / API
 EXPOSE 3000
-
-# Start the bot
 CMD ["npm", "start"]
